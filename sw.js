@@ -48,7 +48,11 @@ const ADBLOCK = {
   "scorecardresearch.com",
   "quantserve.com",
   "krxd.net",
-  "demdex.net"
+  "demdex.net",
+  "255md.com",
+  "c.adsco.re",
+  "adsco.re",
+  "xadsmart.com"
 ]   
 };
 
@@ -73,13 +77,13 @@ self.basePath = self.basePath || basePath;
 
 self.$scramjet = {
     files: {
-        wasm: "https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.wasm.wasm",
-        sync: "https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.sync.js",
+        wasm: "https://delivr.jamjambro2121.workers.dev/gh/Destroyed12121/Staticsj@main/JS/scramjet.wasm.wasm",
+        sync: "https://delivr.jamjambro2121.workers.dev/gh/Destroyed12121/Staticsj@main/JS/scramjet.sync.js",
     }
 };
 
-importScripts("https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.all.js");
-importScripts("https://cdn.jsdelivr.net/npm/@mercuryworkshop/bare-mux/dist/index.js");
+importScripts("https://delivr.jamjambro2121.workers.dev/gh/Destroyed12121/Staticsj@main/JS/scramjet.all.js");
+importScripts("https://delivr.jamjambro2121.workers.dev/npm/@mercuryworkshop/bare-mux/dist/index.js");
 
 const { ScramjetServiceWorker } = $scramjetLoadWorker();
 const scramjet = new ScramjetServiceWorker({
@@ -264,7 +268,7 @@ scramjet.addEventListener("request", async (e) => {
 
         if (!scramjet.client) {
             const connection = new BareMux.BareMuxConnection(basePath + "bareworker.js");
-            await connection.setTransport("https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport@2.1.28/dist/index.mjs", [{ wisp: wispConfig.wispurl }]);
+            await connection.setTransport("https://delivr.jamjambro2121.workers.dev/npm/@mercuryworkshop/epoxy-transport@2.1.28/dist/index.mjs", [{ wisp: wispConfig.wispurl }]);
             scramjet.client = connection;
         }
 
